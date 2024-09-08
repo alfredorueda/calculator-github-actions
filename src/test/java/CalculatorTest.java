@@ -31,7 +31,7 @@ public class CalculatorTest {
     @Test
     public void testModulo() {
         Calculator calculator = new Calculator();
-        assertEquals(2, calculator.modulo(5, 2));
+        assertEquals(1, calculator.modulo(5, 2));
     }
 
 }
