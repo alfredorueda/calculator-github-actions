@@ -10,6 +10,11 @@ jobs:
     build:
         runs-on: ubuntu-latest
 
+        permissions:
+          pull-requests: write
+          contents: read
+          checks: write
+
         steps:
         - name: Checkout code
           uses: actions/checkout@v3
@@ -25,3 +30,13 @@ jobs:
 
         - name: Test with Maven
           run: mvn test
+
+        - name: Publish Check
+          uses: LouisBrunner/checks-action@v2.0.0
+          if: always()
+          with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            name: Test Maven
+            conclusion: ${{ job.status }}
+            output: |
+              {"summary":"${{ steps.test.outputs.summary }}"}

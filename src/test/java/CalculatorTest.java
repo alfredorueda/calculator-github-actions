@@ -28,4 +28,10 @@ public class CalculatorTest {
         assertEquals(2, calculator.divide(6, 3));
     }
 
+    @Test
+    public void testModulo() {
+        Calculator calculator = new Calculator();
+        assertEquals(1, calculator.modulo(5, 2));
+    }
+
 }
