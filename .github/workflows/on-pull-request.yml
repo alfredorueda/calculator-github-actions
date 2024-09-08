@@ -31,7 +31,8 @@ jobs:
         - name: Test with Maven
           run: mvn test
 
-        - uses: LouisBrunner/checks-action@v2.0.0
+        - name: Publish Check
+          uses: LouisBrunner/checks-action@v2.0.0
           if: always()
           with:
             token: ${{ secrets.GITHUB_TOKEN }}
