@@ -37,7 +37,7 @@ public class CalculatorTest {
     @Test
     public void testAdd2() {
         Calculator calculator = new Calculator();
-        assertEquals(8, calculator.add(4, 3));
+        assertEquals(7, calculator.add(4, 3));
     }
 
 }
