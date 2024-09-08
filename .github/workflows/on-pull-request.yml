@@ -11,9 +11,6 @@ jobs:
         runs-on: ubuntu-latest
 
         permissions:
-          id-token: write
-          contents: read
-          issues: write
           pull-requests: write
 
         steps:
@@ -31,12 +28,3 @@ jobs:
 
         - name: Test with Maven
           run: mvn test
-
-        - uses: LouisBrunner/checks-action@v2.0.0
-          if: always()
-          with:
-            token: ${{ secrets.GITHUB_TOKEN }}
-            name: Test Maven
-            conclusion: ${{ job.status }}
-            output: |
-              {"summary":"${{ steps.test.outputs.summary }}"}
