@@ -34,4 +34,10 @@ public class CalculatorTest {
         assertEquals(1, calculator.modulo(5, 2));
     }
 
+    @Test
+    public void testAdd2() {
+        Calculator calculator = new Calculator();
+        assertEquals(8, calculator.add(4, 3));
+    }
+
 }
